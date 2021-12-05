@@ -36,7 +36,7 @@
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-#define RGB_DI_PIN D3			// The pin on the microcontroller the LED strip DIN is connected to (D3)
+#define RGB_DI_PIN D3			// The pin on the microcontroller the LED strip DIN is connected to
 #ifdef RGB_DI_PIN
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 8			// Number of LEDs in your strip
