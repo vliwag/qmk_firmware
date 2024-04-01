@@ -1,0 +1,8 @@
+Use QMK MSYS to convert QMK Configurator keymap.json to keymap.c
+
+qmk json2c [-o OUTPUT] filename
+
+- Use QMK MSYS to convert .json file to a keymap.c file
+	(ex.)  qmk json2c /c/Users/V/qmk_firmware/PATHTOJSON.json -o NAMEOFkeymap.c
+- With the converted keymap.c go to qmk_firmware/keyboards/40percentclub/gherkin/keymaps/vliwag
+- Open and replace the keymap.c file

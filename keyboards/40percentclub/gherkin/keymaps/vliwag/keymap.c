@@ -10,43 +10,16 @@
 #define ALT_N       ALGR_T(KC_N)
 #define CTL_M       RCTL_T(KC_M)
 #define SFT_ENT     RSFT_T(KC_ENT)
-#define COPY		LCTL(KC_C)		// for Copy to work KC_COPY key = L_CTRL + C
-#define PASTE		LCTL(KC_V)		// for Paste to work KC_PSTE key = L_CTRL + V
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	
 	[0] = LAYOUT_ortho_3x10(
-	KC_PPLS,  KC_P1,  KC_P4,  KC_P7,  KC_PSLS,  KC_NLCK,  COPY,    MO(1),   KC_MPRV,  KC_VOLD, 
-	KC_P0,    KC_P2,  KC_P5,  KC_P8,  KC_PAST,  KC_F16,   PASTE,   KC_F14,  KC_MNXT,  KC_VOLU, 
-	KC_PENT,  KC_P3,  KC_P6,  KC_P9,  KC_PMNS,  KC_F17,   KC_INS,  KC_F15,  KC_MPLY,  KC_MUTE
+	KC_MPRV, KC_MNXT, KC_F13, KC_F14, KC_F15, KC_PMNS, KC_P7, KC_P8, KC_P9, KC_PPLS, 
+	KC_VOLU, KC_MUTE, KC_F16, KC_F17, KC_F18, KC_PAST, KC_P4, KC_P5, KC_P6, KC_P0, 
+	KC_VOLD, KC_MPLY, MO(1),  KC_INS, KC_NUM, KC_PSLS, KC_P1, KC_P2, KC_P3, KC_PENT
 	),
-	
 	[1] = LAYOUT_ortho_3x10(
-	KC_NO,  RGB_M_P,  RGB_M_SW,  RGB_M_X,  KC_NO,  KC_NO,  RGB_TOG,  KC_TRNS,   RGB_SAD,  RGB_HUD, 
-	RESET,  RGB_M_B,  RGB_M_SN,  RGB_M_G,  KC_NO,  KC_NO,  RGB_VAD,  RGB_RMOD,  RGB_SAI,  RGB_HUI, 
-	KC_NO,  RGB_M_R,  RGB_M_K,   RGB_M_T,  KC_NO,  KC_NO,  RGB_VAI,  RGB_MOD,   RGB_SPD,  RGB_SPI
+	RGB_HUD, RGB_HUI, RGB_SPI, RGB_MOD,  KC_NO, KC_NO, RGB_M_X,  RGB_M_G,  RGB_M_TW, KC_NO,
+	RGB_VAI, RGB_SAI, RGB_SPD, RGB_RMOD, KC_NO, KC_NO, RGB_M_SW, RGB_M_SN, RGB_M_K,  QK_BOOT, 
+	RGB_VAD, RGB_SAD, KC_TRNS, RGB_TOG,  KC_NO, KC_NO, RGB_M_P,  RGB_M_B,  RGB_M_R,  KC_NO
 	)
 };
-
-void keyboard_pre_init_user(void) {
-  // Call the keyboard pre init code.
-
-  // Set our LED pins as output
-  setPinOutput(D5);
-  setPinOutput(B0);
-}
-
-void led_set_user(uint8_t usb_led) {
-  if (IS_LED_ON(usb_led, USB_LED_NUM_LOCK)) {
-    writePinLow(D5);
-  } else {
-    writePinHigh(D5);
-  }
-
-  if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
-    writePinLow(B0);
-  } else {
-    writePinHigh(B0);
-  }
-}
