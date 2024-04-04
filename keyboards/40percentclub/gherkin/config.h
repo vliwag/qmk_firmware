@@ -36,3 +36,8 @@
 #define RGBLIGHT_EFFECT_SNAKE			// Enable snake animation mode.
 #define RGBLIGHT_EFFECT_STATIC_GRADIENT	// Enable static gradient mode.
 #define RGBLIGHT_EFFECT_TWINKLE			// Enable twinkle animation mode.
+
+/* Defines for NUM Lock and Caps Lock */
+#define LED_NUM_LOCK_PIN D5
+#define LED_CAPS_LOCK_PIN B0
+#define LED_PIN_ON_STATE 1
